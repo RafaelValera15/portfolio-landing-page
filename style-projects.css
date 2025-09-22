@@ -76,7 +76,7 @@ a:hover {
 
 .img-container {
   display: flex;
-  justify-content: flex-start;;
+  justify-content: center;
   align-items: center;
   width: 150px;
   height: 150px;
@@ -114,8 +114,11 @@ a:hover {
 }
 
 .projects h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
   font-size: 2rem;
-  margin-bottom: 30px;
   color: rgb(48,83,48);
 }
 
@@ -210,6 +213,8 @@ a:hover {
   .head-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .mid-part {
