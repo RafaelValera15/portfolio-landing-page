@@ -244,4 +244,16 @@ a:hover {
     align-items: center;
   }
 
+  .contact-form {
+    display: flex;
+    width: auto;
+  }
+
+  .first-last-name-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
 }
