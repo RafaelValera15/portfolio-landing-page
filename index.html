@@ -82,22 +82,45 @@
     <div class="contact-form">
       <h2>Contact Me</h2>
       <div class="contact-form-card">
-        <div class="first-last-name-input">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-        </div>
-        <div class="email-input">
-          <input type="email" name="email" placeholder="xxx@yyy.com" required />
-        </div>
-        <div class="reason-input">
-          <textarea
-            name="reason"
-            placeholder="Reason for Contacting Me"
-          ></textarea>
-          <div class="submit-btn">
-            <button>Submit</button>
+        <form action="https://formspree.io/f/mdkwopen" method="POST">
+          <div class="first-last-name-input">
+            <input
+              type="text"
+              name="first-name"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="last-name"
+              placeholder="Last Name"
+              required
+            />
           </div>
-        </div>
+          <div class="email-input">
+            <input
+              type="email"
+              name="email"
+              placeholder="xxx@yyy.com"
+              required
+            />
+          </div>
+          <div class="reason-input">
+            <textarea
+              name="reason"
+              placeholder="Reason for Contacting Me"
+              required
+            ></textarea>
+            <input
+              type="hidden"
+              name="_next"
+              value="https://yourusername.github.io/portfolio-landing-page/thank-you.html"
+            />
+            <div class="submit-btn">
+              <button type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </body>

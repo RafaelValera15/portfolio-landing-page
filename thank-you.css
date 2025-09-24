@@ -1,0 +1,36 @@
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+    .thank-you {
+      text-align: center;
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+    }
+    .thank-you h1 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .thank-you p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+    .thank-you a {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #0077ff;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .thank-you a:hover {
+      background: #005fcc;
+    }
