@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/projects/vending-suggestions/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <h1>Suggest a Snack</h1>
+      <form id="suggestionForm">
+        <!-- location dropdown -->
+        <label for="locationSelect">Select Location:</label>
+        <select id="locationSelect" required>
+          <option value="Downtown Office">Downtown Office</option>
+          <option value="Mall">Mall</option>
+          <option value="Gym">Gym</option>
+          <option value="Hospital">Hospital</option>
+          <option value="University">University</option>
+        </select>
+        <input
+          type="text"
+          id="snackInput"
+          placeholder="Enter snack name"
+          required
+        />
+        <button type="submit">Submit</button>
+        <p id="message"></p>
+      </form>
+      <div id="suggestionsList"></div>
+    </div>
+    <script src="/projects/vending-suggestions/script.js"></script>
+  </body>
+</html>

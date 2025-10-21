@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="projects-sect.html" />
     <title>Rafael Valera's Project</title>
     <link
@@ -63,7 +63,7 @@
         <div class="download-resume">
           <div class="download-btn">
             <a
-              href="assets1/Rafael-Valeras-Resume.pdf"
+              href="assets1/pdf/Rafael-Valeras-Resume.pdf"
               target="_blank"
               class="resume-btn"
             >
@@ -75,7 +75,7 @@
       </div>
       <div class="right-side-container">
         <div class="right-side-resume">
-          <img src="assets1/screenshot-resume.png" alt="" />
+          <img src="assets1/pdf/Rafael-Valeras-Resume.pdf" alt="" />
         </div>
       </div>
     </div>
@@ -114,7 +114,7 @@
             <input
               type="hidden"
               name="_next"
-              value="https://rafaelvalera15.github.io/portfolio-landing-page/thank-you.html"
+              value="https://rafaelvalera15.github.io/portfolio-landing-page/index.html"
             />
             <div class="submit-btn">
               <button type="submit">Submit</button>
@@ -123,5 +123,50 @@
         </form>
       </div>
     </div>
+    <script>
+      (function () {
+        const API = "https://ai-agent-yourname.vercel.app/chat";
+        const box = document.createElement("div");
+        box.style.cssText =
+          "position:fixed;bottom:20px;right:20px;width:320px;max-width:85vw;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.15);font-family:sans-serif;z-index:99999;";
+        box.innerHTML = `
+    <div style="padding:8px 12px;border-bottom:1px solid #eee;font-weight:600;background:#fafafa">Chat with Rafael's AI</div>
+    <div id="chatlog" style="height:280px;overflow:auto;padding:10px;font-size:14px;line-height:1.4"></div>
+    <form id="agentform" style="display:flex;border-top:1px solid #eee">
+      <input id="agentinput" placeholder="Type your message..." style="flex:1;padding:8px;border:none;outline:none"/>
+      <button>Send</button>
+    </form>`;
+        document.body.appendChild(box);
+        const log = box.querySelector("#chatlog");
+        const form = box.querySelector("#agentform");
+        const input = box.querySelector("#agentinput");
+        const history = [];
+
+        function add(role, text) {
+          const div = document.createElement("div");
+          div.innerHTML = `<b>${role}:</b> ${text}`;
+          div.style.margin = "6px 0";
+          log.appendChild(div);
+          log.scrollTop = log.scrollHeight;
+        }
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const text = input.value.trim();
+          if (!text) return;
+          add("You", text);
+          input.value = "";
+          const res = await fetch(API, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              messages: [{ role: "user", content: text }],
+            }),
+          });
+          const data = await res.json();
+          add("RafaelBot", data.reply);
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -144,6 +144,7 @@ a:hover {
 
 .project-card img {
   max-width: 100%;
+  border: 1px solid grey;
   border-radius: 5px;
   margin-bottom: 15px;
 }
@@ -173,6 +174,19 @@ a:hover {
 .project-card .btn:hover {
   background: #005fa3;
 }
+
+.mid-part h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+  margin: 20px 0 20px;
+  font-size: 1.5rem;
+  color: rgb(48,83,48);
+}
+
+
 
 @media (min-width: 768px) and (max-width: 1023px ) {
   .head-container {
@@ -207,6 +221,15 @@ a:hover {
     justify-content: center;
     align-items: center;
   }
+
+  .live-projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;;
+  margin-top: 20px;
+}
 }
 
   @media (max-width: 767px) {
@@ -255,5 +278,16 @@ a:hover {
     gap: 10px;
     width: 100%;
   }
+
+  .live-projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  gap: 10px;
+  padding: 20px;
+}
 
 }
